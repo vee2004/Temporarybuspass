@@ -1,0 +1,670 @@
+/* Main Container */
+@import url('https://fonts.googleapis.com/css2?family=SamsungOne&family=SamsungSans&display=swap');
+
+:root {
+  --samsung-font: 'SamsungOne', 'SamsungSans', 'SamsungOneKorean', -apple-system, BlinkMacSystemFont, 
+                 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+                 sans-serif;
+  --background-color: #F9FAFB;
+}
+
+/* Add Samsung InterFace font */
+@font-face {
+  font-family: 'Samsung InterFace';
+  src: local('Samsung InterFace Regular'), local('SamsungInterFace-Regular'),
+       url('https://cdn.jsdelivr.net/gh/samsung-ukraine/fonts/SamsungInterFace/SamsungInterFace-Regular.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/samsung-ukraine/fonts/SamsungInterFace/SamsungInterFace-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Samsung InterFace';
+  src: local('Samsung InterFace Bold'), local('SamsungInterFace-Bold'),
+       url('https://cdn.jsdelivr.net/gh/samsung-ukraine/fonts/SamsungInterFace/SamsungInterFace-Bold.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/samsung-ukraine/fonts/SamsungInterFace/SamsungInterFace-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: var(--samsung-font);
+}
+
+.bus-booking-container {
+  position: absolute;
+  width: 1460px;
+  height: 628px;
+  
+  left: 24px;
+  box-sizing: border-box;
+  font-family: var(--samsung-font);
+  background-color: var(--background-color);
+  border-radius: 10px;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  position: relative;
+  padding-top: 10px;
+}
+
+/* Card Styling */
+/* .booking-card {
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+} */
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: none;
+  padding-left: 25px;  
+  padding-right:100px;  
+  box-sizing: border-box;  
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 600;
+  flex: 1;  
+  min-width: 200px;  
+}
+
+.trip-info {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: #000000;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.trip-info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  position: relative;
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Add vertical divider between items except the last one */
+.trip-info span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color:  #000000;
+  
+}
+
+.trip-info strong {
+  color: #000000;
+  font-weight: 700;
+  margin-left: 2px;
+  
+}
+.trip-info span:last-child strong {
+  color: #009951;
+  font-weight: 700;
+  margin-left: 2px;
+  
+}
+
+/* Form Styling */
+.booking-form {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  border-radius: 0 0 10px 10px;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: flex-end;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 180px;
+  margin-bottom: 15px;
+}
+
+/* Required field asterisk - consolidated and more specific */
+.form-group label .required-asterisk {
+  color: #FF0000 !important;
+  margin-left: 2px;
+  font-weight: 700;
+  display: inline-block; /* Ensure it's properly displayed */
+}
+
+/* Remove any duplicate or conflicting styles */
+.required-asterisk {
+  color: #FF0000 !important;
+  margin-left: 2px;
+  font-weight: 700;
+}
+
+/* Form Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.015em;
+  color: #202224;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure the asterisk stays red in all states */
+.form-group label .required-asterisk:hover,
+.form-group label .required-asterisk:focus {
+  color: #FF0000 !important;
+}
+
+.form-control,
+select.form-control,
+input[type="text"].form-control,
+input[type="date"].form-control,
+input[type="time"].form-control,
+#returnDate {
+  width: 100%;
+  max-width: 410px;
+  height: 46.72px !important;
+  padding: 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: #FFFFFF;
+  font-size: 14px;
+  color: #202224;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  -webkit-appearance: none; /* For iOS */
+  -moz-appearance: none;    /* For Firefox */
+  appearance: none;         /* Standard */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="date"] {
+  min-height: 46.72px;
+}
+
+.form-control:focus,
+select.form-control:focus,
+input[type="text"].form-control:focus,
+input[type="date"].form-control:focus,
+input[type="time"].form-control:focus {
+  outline: none;
+  
+  
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 35px; /* Room for custom arrow */
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23202224' stroke-width='1.89' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 13px 7px;
+  cursor: pointer;
+}
+
+/* Radio Button Group */
+.radio-group {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.form-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #000000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Radio button icon - default state (unchecked) */
+.radio-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-image: url("../assets/icon (1).svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease;
+}
+
+/* Radio button icon - checked state */
+.form-radio input:checked ~ .radio-btn {
+  background-image: url("../assets/icon.svg");
+}
+
+/* Focus state - remove default outline but keep accessibility */
+.form-radio input:focus {
+  outline: none;
+}
+
+/* Add custom focus style for better accessibility */
+.form-radio input:focus ~ .radio-btn {
+  
+  border-radius: 50%;
+}
+
+/* Hover effect */
+.form-radio:hover .radio-btn {
+  opacity: 0.8;
+}
+
+/* Label text styling */
+.radio-label {
+  margin-left: 8px;
+  font-weight: 400;
+  color: #6E6E6E; /* Default color for unchecked state */
+  transition: color 0.2s ease;
+}
+.form-radio input:checked ~ .radio-label {
+  color: #333333;
+  font-weight: 700;
+}
+
+/* Date input with calendar icon */
+.date-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 410px;
+}
+
+.date-input-wrapper {
+  position: relative;
+}
+
+.date-input-wrapper .calendar-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Hide the default calendar icon in WebKit browsers */
+.date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Ensure the input has enough padding for the icon */
+.date-input-wrapper input[type="date"] {
+  padding-right: 40px;
+}
+
+/* Focus state for date inputs */
+.date-input-wrapper input[type="date"]:focus {
+  outline: none;
+  border-color: #E5E7EB;
+  box-shadow: none;
+}
+
+/* Pinboard Icon Styles */
+.pinboard-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  display: inline-block;
+  align-items: flex-start;
+  justify-content: flex-end;
+  transform: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transform: none !important;
+  -moz-transition: none !important;
+  -ms-transform: none !important;
+  -ms-transition: none !important;
+  -o-transform: none !important;
+  -o-transition: none !important;
+  will-change: auto !important;
+  backface-visibility: hidden !important;
+  perspective: 1000px !important;
+}
+
+.pinboard-icon {
+  
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  
+  border-radius: 4px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  position: relative;
+  transform: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transform: none !important;
+  -moz-transition: none !important;
+  -ms-transform: none !important;
+  -ms-transition: none !important;
+  -o-transform: none !important;
+  -o-transition: none !important;
+  will-change: auto !important;
+  backface-visibility: hidden !important;
+  perspective: 1000px !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Add border when popup is displayed */
+.pinboard-container:has(.note-popup) .pinboard-icon {
+  
+  
+  border-radius: 6px !important;
+}
+
+.pinboard-icon:active,
+.pinboard-icon:focus,
+.pinboard-icon:active:focus {
+  outline: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  background: #F5F5F5 !important;
+}
+.pinboard-container * {
+  transform: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transform: none !important;
+  -moz-transition: none !important;
+  -ms-transform: none !important;
+  -ms-transition: none !important;
+  -o-transform: none !important;
+  -o-transition: none !important;
+  will-change: auto !important;
+  backface-visibility: hidden !important;
+  perspective: 1000px !important;
+}
+
+/* Close button in note popup */
+.close-note {
+  background: none;
+  border: none; /* Remove border */
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+/* Remove focus outline from close button */
+.close-note:focus,
+.close-note:focus-visible {
+  outline: none !important;
+  border: none !important;
+}
+
+.close-note:hover {
+  background: none; /* Remove hover background */
+}
+
+.close-note img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Note Popup */
+.note-popup {
+  position: absolute;        /* float over content */
+  top: 35px;                 /* adjust position to appear below the beak icon */
+  right: 0; 
+  width: 521px;
+  height: 180px;
+  background: var(--Background-Default-Default, #FFFFFF);
+  border-radius: 10px; /* Radius/200 (assuming large rounded corners) */
+  border: 1px solid #E5E7EB; /* Stroke/Border */
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Samsung InterFace', -apple-system, BlinkMacSystemFont, sans-serif;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  
+}
+
+.note-header h4 {
+  font-family: 'Samsung InterFace', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 14px; /* Body/Size Small */
+  line-height: 140%;
+  letter-spacing: 0%;
+  margin: 0;
+  color: #000;
+}
+
+.note-text {
+  margin: 0;
+  padding: 0;
+  transform: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transform: none !important;
+  -moz-transition: none !important;
+  -ms-transform: none !important;
+  -ms-transition: none !important;
+  -o-transform: none !important;
+  -o-transition: none !important;
+}
+
+.note-text ul {
+  margin: 0;
+  padding-left: 16px;
+  list-style: none;
+}
+
+.note-text li {
+  font-family: 'Samsung InterFace', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 14px; /* Body/Size Small */
+  line-height: 140%;
+  letter-spacing: 0%;
+  margin-bottom: 8px;
+  color:  #606060;
+  
+  position: relative;
+}
+
+.note-text li:last-child {
+  margin-bottom: 0;
+}
+
+.note-text li::before {
+  content: "•";
+  position: absolute;
+  left: -14px;
+  top: 0;
+  color: #606060;
+  
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Beak icon - visual indicator between pinboard icon and popup */
+.beak-icon {
+  position: absolute;
+  top: 28px; 
+  left: 16%;                /* Position below the pinboard icon */
+  right: 10px;               /* Center align with pinboard icon */
+  width: 12px;
+  height: 7px;
+  z-index: 1001;             /* Above the pinboard icon but below the popup */
+  pointer-events: none;      /* Don't interfere with clicks */
+  transform: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transform: none !important;
+  -moz-transition: none !important;
+  -ms-transform: none !important;
+  -ms-transition: none !important;
+  -o-transform: none !important;
+  -o-transition: none !important;
+}
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.btn-submit {
+  background-color: #38AEE0;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 38px;
+  margin-left: auto;
+  margin-right: 38px;
+  display: block;
+  width:90px;
+  text-decoration: none; /* Remove any underline */
+}
+
+.btn-submit:hover {
+  background-color: #2d8fc6; /* Slightly darker shade on hover */
+  color: white;
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .form-grid {
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    min-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .trip-info {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
