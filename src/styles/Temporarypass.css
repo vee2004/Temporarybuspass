@@ -109,7 +109,7 @@ body, html {
   white-space: nowrap;
   position: relative;
   color: #000000;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Add vertical divider between items except the last one */
@@ -127,7 +127,7 @@ body, html {
 
 .trip-info strong {
   color: #000000;
-  font-weight: 700;
+  font-weight: 500;
   margin-left: 2px;
   
 }
@@ -506,7 +506,7 @@ select.form-control {
   top: 35px;                 /* adjust position to appear below the beak icon */
   right: 0; 
   width: 521px;
-  height: 180px;
+  height: 150px;
   background: var(--Background-Default-Default, #FFFFFF);
   border-radius: 10px; /* Radius/200 (assuming large rounded corners) */
   border: 1px solid #E5E7EB; /* Stroke/Border */
@@ -521,8 +521,8 @@ select.form-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
-  padding-bottom: 8px;
+  margin-bottom: 3px;
+  padding-bottom: 4px;
   
 }
 
@@ -563,7 +563,7 @@ select.form-control {
   font-size: 14px; /* Body/Size Small */
   line-height: 140%;
   letter-spacing: 0%;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
   color:  #606060;
   
   position: relative;
